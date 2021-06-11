@@ -1,0 +1,104 @@
+# zsh starship prompt configuration file. This is a .toml file, but it has the same syntax for comments as shell scripts.
+# Make sure to know what you are doing before modifying this file, as it can mess up the whole starship prompt, so basically your terminal display.
+# This file is also sensitive to newlines and blankspaces, so take care while modifying any content of this file.
+
+# insert a blank line between shell prompts
+add_newline = false
+
+# replace the default arrow symbol with another one
+[character]
+success_symbol = "[「ランヒルディ」](bold red)"
+error_symbol = "[「アイシテル」](bold red)"
+
+[battery]
+# You can modify the symbols as you'd like
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 500 # Show command duration over 500 milliseconds (=0.5 sec)
+format = " took [$duration]($style)"
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+# This whole section of git modules parses various informations for git. 
+# This module parses the current git branch you are in
+[git_branch]
+format = " [$symbol$branch]($style) "
+
+# This symbol can be modified at anytime. It can also be a characters string.
+symbol = ""
+style = "bold yellow"
+
+# This modules parses the commit informations
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+# This module parses the current git repo status for user information and puts it on the prompt
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+
+# You can modify all the symbols as you'd like to. Just make sure that they are still making sense.
+conflicted = ""
+ahead = " x${count}"
+behind = " x${count}"
+diverged = " x${ahead_count}"
+untracked = " x${count}"
+stashed = ""
+modified = " x${count}"
+staged = " x${count}"
+renamed = " x${count}"
+deleted = " x${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
+
+[julia]
+format = "[$symbol$version]($style)"
+
+# You can modify the symbol here as well.
+symbol = ""
+style = "bold green"
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
+
+[package]
+disabled = true
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[time]
+time_format = "%H:%M"
+format = " $time($style) "
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
