@@ -3,7 +3,7 @@ function chpwd() {
     emulate -L zsh
     # uses ptSh for better-looking stdout
     # You can put any argument you'd like for a different output
-    ptls
+    ptls && ptpwd
 }
 
 # change into the just created dir
