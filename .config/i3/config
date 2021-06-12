@@ -20,6 +20,9 @@ exec --no-startup-id dunst
 exec --no-startup-id kunst
 exec --no-startup-id dunst_listener
 
+# lock screen
+bindsym $mod+l exec dm-tool switch-to-greeter
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute 
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute

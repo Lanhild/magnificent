@@ -23,7 +23,7 @@ case "$chosen" in
         ;;
 
     "$lock")
-        betterlockscreen -l blur
+        dm-tool switch-to-greeter
         ;;
 
     "$suspend")
