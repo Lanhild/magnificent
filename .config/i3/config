@@ -21,6 +21,7 @@ exec --no-startup-id picom
 
 # starts notifications daemon
 exec --no-startup-id dunst
+exec --no-startup-id kunst
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute 
@@ -31,9 +32,9 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 # keybinds for mpc (MPD)
 bindsym $mod+Shift+v exec mpc volume -5 && notify-send -u low -t 1800 "音楽プレーヤー" "Lowered $(mpc volume)"
 bindsym $mod+Shift+b exec mpc volume +5 && notify-send -u low -t 1800 "音楽プレーヤー" "Augmented $(mpc volume)"
-bindsym XF86AudioPlay exec mpc -q toggle && notify-send -u low -t 1800 "音楽プレーヤー" "$(mpc current)"
-bindsym XF86AudioNext exec mpc -q next && notify-send -u low -t 1800 "音楽プレーヤー" "$(mpc current)"
-bindsym XF86AudioPrev exec mpc -q prev && notify-send -u low -t 1800 "音楽プレーヤー" "$(mpc current)"
+bindsym XF86AudioPlay exec mpc -q toggle && notify-send -u low -t 1800 -i /tmp/kunst.png  "音楽プレーヤー" "$(mpc current)"
+bindsym XF86AudioNext exec mpc -q next && notify-send -u low -t 1800 -i /tmp/kunst.png  "音楽プレーヤー" "$(mpc current)"
+bindsym XF86AudioPrev exec mpc -q prev && notify-send -u low -t 1800 -i /tmp/kunst.png "音楽プレーヤー" "$(mpc current)"
 
 # brightness settings
 bindsym XF86MonBrightnessUp exec --no-startup-id blight -d intel_backlight set +10% && notify-send -u low -t 1800 "バックライト" "Augmented of 10%"
