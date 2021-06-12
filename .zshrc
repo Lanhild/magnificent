@@ -22,6 +22,7 @@ alias rm="ptrm"
 
 # starship prompt $HOME/.config/starship.toml
 eval "$(starship init zsh)"
+neofetch
 
 # always source plugins at the end of the file.
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
