@@ -3,10 +3,6 @@ set $mod Mod4
 font pango:Source Code Pro 10
 #font pango:DejaVu Sans Mono 8
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur
-
 # network manager status applet
 exec --no-startup-id nm-applet
 
@@ -44,9 +40,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id blight -d intel_backlight set
 # scrot keybind
 bindsym Ctrl+Mod1+Tab exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/screenshots/' && notify-send -u low -t 1800 "ピクチャー" "Screenshot saved"
 
-# lock the screen
-bindsym $mod+l exec --no-startup-id betterlockscreen -l blur
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier Mod1
 
@@ -66,7 +59,7 @@ bindsym Mod1+F4 kill
 bindcode 133 --release exec rofi -show drun
 bindsym $mod+r exec rofi -show run
 bindsym $mod+a exec ytfzf -D
-bindsym $mod+s exec wal -i ~/Pictures/Wallpapers/ && pywalfox update
+bindsym $mod+s exec wal -i ~/Pictures/Wallpapers/ && pywalfox update && slick-pywal
 
 # Focus to window
 bindsym $mod+Left focus left
