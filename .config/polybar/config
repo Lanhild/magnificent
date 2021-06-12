@@ -32,7 +32,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 modules-left = cpu separator memory separator pulseaudio
-modules-right = battery separator date separator powermenu
+modules-right = filesystem separator battery separator date separator powermenu
 modules-center = player separator wlan
 
 [module/xbacklight]
@@ -78,6 +78,7 @@ date = "%{F#57738c}%h %d %Y  "
 time = "%{F-}%l:%M %p"
 
 label = %date%%time%
+label-foreground = ${colors.accent}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -174,8 +175,33 @@ label-song-ellipsis = true
 type = custom/text
 content = ""
 content-font = 4
-content-foreground = #ff0000
+content-foreground = ${colors.accent}
 click-left = exec .config/rofi/powermenu/powermenu.sh
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+interval = 30
+
+fixed-values = true
+
+format-mounted = <label-mounted>
+format-mounted-prefix = 
+format-mounted-prefix-font = 4
+format-mounted-prefix-foreground = ${colors.accent}
+format-mounted-background = ${colors.background}
+format-mounted-padding = 2
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix = 
+format-unmounted-background = ${colors.accent}
+format-unmounted-padding = 2
+
+label-mounted = " %used% | %free%"
+
+label-unmounted = " %mountpoint%: not mounted"
 
 [module/separator]
 type = custom/text
