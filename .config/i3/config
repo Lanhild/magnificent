@@ -3,6 +3,9 @@ set $mod Mod4
 font pango:Source Code Pro 10
 #font pango:DejaVu Sans Mono 8
 
+# starts clipboard daemon
+exec --no-startup-id greenclip daemon
+
 # network manager status applet
 exec --no-startup-id nm-applet
 
@@ -61,6 +64,7 @@ bindsym Mod1+F4 kill
 # A more modern dmenu replacement is rofi:
 bindcode 133 --release exec rofi -show drun
 bindsym $mod+r exec rofi -show run
+bindsym $mod+z exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+a exec ytfzf -D
 bindsym $mod+s exec wal -i ~/Pictures/Wallpapers/ --iterative && pywalfox update && slick-pywal
 
