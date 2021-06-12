@@ -22,6 +22,7 @@ exec --no-startup-id picom
 # starts notifications daemon
 exec --no-startup-id dunst
 exec --no-startup-id kunst
+exec --no-startup-id dunst_listener
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute 
