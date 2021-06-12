@@ -24,7 +24,8 @@ alias rm="ptrm"
 eval "$(starship init zsh)"
 neofetch
 
-SAVEHIST=1000
+HISTSIZE=1000
+SAVEHIST=10
 HISTFILE=~/.zsh_history
 
 # always source plugins at the end of the file.
