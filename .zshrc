@@ -24,6 +24,9 @@ alias rm="ptrm"
 eval "$(starship init zsh)"
 neofetch
 
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
 # always source plugins at the end of the file.
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
