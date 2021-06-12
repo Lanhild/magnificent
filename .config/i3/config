@@ -64,7 +64,7 @@ bindsym Mod1+F4 kill
 bindcode 133 --release exec rofi -show drun
 bindsym $mod+r exec rofi -show run
 bindsym $mod+a exec ytfzf -D
-bindsym $mod+s exec wal -i ~/Pictures/Wallpapers/ --iterative && pywalfox update
+bindsym $mod+s exec wal -i ~/Pictures/Wallpapers/ && pywalfox update
 
 # Focus to window
 bindsym $mod+Left focus left
